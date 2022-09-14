@@ -26,6 +26,7 @@ public class LinkedList<T> {
         head = newNode;
 
     }
+
     public void addAt(int index, T data) {
         Node<T> newNode = new Node<>();
         newNode.data = data;
@@ -44,19 +45,28 @@ public class LinkedList<T> {
         }
     }
 
-    public void print() {
+    public void deleteAtStart() {
         Node<T> node = head;
-        while (node.next != null) {
-            System.out.print(node.data + " -> ");
-            node = node.next;
-        }
-        System.out.println(node.data);
+        head = head.next;
+        System.out.println("Node deleted is: " + node.data);
     }
-    public void print(int index) {
-        Node<T> node = head;
-        for (int i = 0; i < index - 1; i++) {
-            node = node.next;
+
+
+
+        public void print () {
+            Node<T> node = head;
+            while (node.next != null) {
+                System.out.print(node.data + " -> ");
+                node = node.next;
+            }
+            System.out.println(node.data);
         }
-        System.out.println(node.data);
+        public void print ( int index){
+            Node<T> node = head;
+            for (int i = 0; i < index - 1; i++) {
+                node = node.next;
+            }
+            System.out.println(node.data);
+        }
     }
-}
+
