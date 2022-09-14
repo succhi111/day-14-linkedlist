@@ -17,6 +17,15 @@ public class LinkedList<T> {
         }
     }
 
+    public void addAtStart(T data) {
+
+        Node<T> newNode = new Node<>();
+        newNode.data = data;
+        newNode.next = head;
+        head = newNode;
+
+    }
+
     public void print() {
         Node<T> node = head;
         while (node.next != null) {
